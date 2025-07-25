@@ -1,0 +1,14 @@
+{
+    "--white": "#ffffff",
+    "--grey-100": "#efefef",
+    "--grey-200": "#d9d9d9",
+    "--grey-300": "#999999",
+    "--grey-400": "#666666",
+    "--primary-100": "#e9edf0",
+    "--primary-300": "#90a3b5",
+    "--primary-400": "#50667d",
+    "--primary-500": "#2a3a4d",
+    "--secondary-100": "#fbf9f1",
+    "--secondary-300": "#f6f1e4",
+    "--secondary-400": "#ede2c8"
+}
