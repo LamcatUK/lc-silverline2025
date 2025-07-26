@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages
  *
- * @package lc-valewood2025
+ * @package lc-silverline2025
  */
 
 // Exit if accessed directly.

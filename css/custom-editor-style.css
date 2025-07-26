@@ -1,68 +1,65 @@
 @charset "UTF-8";
 :root {
-  /* Colours */
-  /* Neutrals */
-  --hsl-dark: 0 0% 20%;
-  --col-dark: hsl(var(--hsl-dark));
-  --hsl-light: 0 0% 97%;
-  --col-light: hsl(var(--hsl-light));
-  --hsl-grey-400: 0 0% 40%;
-  --col-grey-400: hsl(var(--hsl-grey-400));
-  --hsl-grey-300: 0 0% 60%;
-  --col-grey-300: hsl(var(--hsl-grey-300));
-  --hsl-grey-200: 0 0% 85%;
-  --col-grey-200: hsl(var(--hsl-grey-200));
-  --hsl-grey-100: 0 0% 94%;
-  --col-grey-100: hsl(var(--hsl-grey-100));
-  /* Brand Colours: Option 1 – Sage & Neutrals */
-  /* Brand Colours: Option 2 – Soft Navy & Warm Ivory */
-  /* Brand Colours: Option 3 – Slate & Copper */
-  --hsl-primary-500: 210 10% 20%;
-  --hsl-primary-400: 210 10% 40%;
-  --hsl-primary-300: 210 10% 70%;
-  --hsl-primary-100: 210 10% 95%;
-  --hsl-secondary-400: 24 60% 60%;
-  --hsl-secondary-300: 24 70% 75%;
-  --hsl-secondary-100: 24 80% 90%;
-  --col-primary-500: hsl(var(--hsl-primary-500));
-  --col-primary-400: hsl(var(--hsl-primary-400));
-  --col-primary-300: hsl(var(--hsl-primary-300));
-  --col-primary-100: hsl(var(--hsl-primary-100));
-  --col-secondary-400: hsl(var(--hsl-secondary-400));
-  --col-secondary-300: hsl(var(--hsl-secondary-300));
-  --col-secondary-100: hsl(var(--hsl-secondary-100));
-  /* Font Sizes */
-  --base-font-size: 16px;
+  /* Base */
+  --white: #fff;
+  --black: #000;
+  /* Theme color */
+  --theme: #6b8c9b;
+  --theme-rgb: 107, 140, 155;
+  --theme-darker: #40545e;
+  --theme-contrast: #bac0c2;
+  --theme-alt: #e40138;
+  --theme-alt-darker: #890123;
+  --theme-alt-contrast: #fff;
+  --heading-dark: #6b8c9b;
+  --text-dark: #444;
+  --background-dark: #444;
+  --background-dark-lighter: #484848;
+  --border-dark: rgba(0, 0, 0, 0.08);
+  /* Light color */
+  --heading-light: #fff;
+  --text-light: #fff;
+  --background-light: #f9f9f9;
+  --border-light: rgba(255, 255, 255, 0.1);
+  /* Header */
+  --selected-nav-item: #e40138;
+  --header-height: 100px;
+  --logo-padding: 15px;
+  --navigation-padding: 30px;
+  --pre-top-height: 30px;
+  --top-combo-calc: calc(var(--header-height) + var(--pre-top-height));
+  /* Buttons */
+  --button-border-radius: 5px;
+  /* Typography */
+  --body-font: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --heading-font: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --font-size-small: 0.8rem;
+  --font-size: 1.1rem;
+  --font-size-big: 1.25rem;
+  --font-size-larger: 2.5rem;
+  --font-weight-normal: normal;
+  --font-weight-light: 300;
+  --font-weight-bold: bold;
+  --font-weight-bolder: bolder;
   --fs-300: 0.8rem;
-  --fs-350: 0.9rem;
   --fs-400: 1rem;
-  --fs-450: clamp(1.1rem, 0.6vw + 0.9rem, 1.25rem);
-  --fs-500: clamp(1.25rem, 1vw + 0.8rem, 1.55rem);
-  --fs-600: clamp(1.6rem, 1.2vw + 1rem, 1.95rem);
-  --fs-700: clamp(2rem, 1.4vw + 1.2rem, 2.45rem);
-  --fs-800: clamp(2.5rem, 1.6vw + 1.5rem, 3.05rem);
-  --fs-900: clamp(3.2rem, 2vw + 1.8rem, 3.8rem);
-  /* Font Families */
-  --ff-body: "Lato", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  --ff-heading: "Montserrat", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  --ff-serif: "Playfair Display", Georgia, "Times New Roman", serif;
-  --ff-fa: "Font Awesome 6 Pro";
+  --fs-500: 1.2rem;
+  --fs-600: 1.4rem;
+  --fs-700: 1.6rem;
+  --fs-800: 2.5rem;
+  --fs-900: 3.75rem;
+  /* Validation */
+  --success: #2ecc71;
+  --error: #e74c3c;
   /* Font Weights */
-  --fw-400: 400;
-  --fw-500: 500;
+  --fw-300: 400;
   --fw-700: 700;
+  --ff-fontawesome: "Font Awesome 6 Free";
   /* Effects */
   --transition: 250ms ease-out;
   /* Site General */
   --h-top: 83px;
   --h-top-desktop: 83px;
-  --border-radius: 0.5rem;
-  /* Spacing */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 2rem;
-  --space-lg: 4rem;
-  --space-xl: 6rem;
 }
 
 *,

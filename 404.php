@@ -4,7 +4,7 @@
  *
  * This template is displayed when a user tries to access a page that does not exist.
  *
- * @package lc-valewood2025
+ * @package lc-silverline2025
  */
 
 defined( 'ABSPATH' ) || exit;

@@ -13,13 +13,6 @@ main {
         margin-top: var(--h-top-desktop);
     }
 
-    &.blog {
-        margin-top: calc(var(--h-top) + 1rem);
-        @media (min-width: 992px) {
-            margin-top: calc(var(--h-top-desktop) + 1rem);
-        }
-    }
-
     a {
         display: inline-block;
         font-weight: var(--fw-700);
@@ -30,16 +23,6 @@ main {
             color: inherit;
         }
     }
-
-    // a {
-    //     text-decoration: underline;
-    //     // color: var(--col-green-400);
-    //     transition: opacity var(--transition);
-    //     font-weight: var(--fw-600);
-    //     &:hover {
-    //         text-decoration: none;
-    //     }
-    // }
 
     .noline,
     .noline > * {
@@ -81,13 +64,6 @@ main {
 
 .container-xl .container-xl {
     padding-inline: 0;
-}
-
-.investis_iframe {
-    height: 950px;
-    @media (min-width: 754px) {
-        height: 800px;
-    }
 }
 
 [class^='icon-'] {
@@ -132,19 +108,6 @@ main {
     margin-bottom: 1em;
 }
 
-.form-control {
-    border-radius: 0;
-}
-
-.wp-block-search__label {
-    margin-bottom: 0.5rem;
-    font-weight: var(--fw-500);
-}
-
-.wp-block-search__button {
-    @extend .button;
-}
-
 .show-on-touch {
     display: none;
 }
@@ -152,6 +115,11 @@ main {
     .show-on-touch {
         display: block;
     }
+}
+
+.py-6 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 // show stuff that overflows horizontally

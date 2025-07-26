@@ -1,0 +1,26 @@
+.icons {
+    background-color: var(--background-light);
+    .container {
+        display: flex;
+        gap: 2rem;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    &__icon {
+        flex-basis: 25%;
+        max-width: 25%;
+        @media (min-width: 768px) {
+            flex-basis: 10%;
+            max-width: 10%;
+        }
+        text-align: center;
+        i {
+            font-size: 3rem;
+        }
+        h2 {
+            font-size: var(--fs-500);
+            color: var(--theme);
+            line-height: 1.5;
+        }
+    }
+}

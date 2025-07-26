@@ -8,7 +8,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-define( 'LC_THEME_DIR', WP_CONTENT_DIR . '/themes/lc-valewood2025' );
+define( 'LC_THEME_DIR', WP_CONTENT_DIR . '/themes/lc-silverline2025' );
 
 require_once LC_THEME_DIR . '/inc/lc-theme.php';
 
@@ -56,7 +56,7 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
  * Load the child theme's text domain
  */
 function add_child_theme_textdomain() {
-	load_child_theme_textdomain( 'lc-valewood2025', get_stylesheet_directory() . '/languages' );
+	load_child_theme_textdomain( 'lc-silverline2025', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 

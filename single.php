@@ -2,7 +2,7 @@
 /**
  * Template for displaying single posts.
  *
- * @package lc-valewood2025
+ * @package lc-silverline2025
  */
 
 defined( 'ABSPATH' ) || exit;

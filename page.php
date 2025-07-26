@@ -1,9 +1,9 @@
 <?php
 /**
  * Template Name: Custom Page Template
- * Description: A custom page template for the Valewood Bathrooms theme.
+ * Description: A custom page template for the Silverline Coaches theme.
  *
- * @package lc-valewood2025
+ * @package lc-silverline2025
  */
 
 defined( 'ABSPATH' ) || exit;

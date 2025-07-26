@@ -5,7 +5,7 @@
  * This file contains the code to register custom post types
  * for the theme.
  *
- * @package lc-valewood2025
+ * @package lc-silverline2025
  */
 
 /**
@@ -17,10 +17,10 @@
 function cb_register_post_types() {
 
 	$args = array(
-		'label'                 => __( 'Testimonials', 'lc-valewood2025' ),
+		'label'                 => __( 'Testimonials', 'lc-silverline2025' ),
 		'labels'                => array(
-			'name'          => __( 'Testimonial', 'lc-valewood2025' ),
-			'singular_name' => __( 'Testimonial', 'lc-valewood2025' ),
+			'name'          => __( 'Testimonial', 'lc-silverline2025' ),
+			'singular_name' => __( 'Testimonial', 'lc-silverline2025' ),
 		),
 		'description'           => '',
 		'public'                => true,

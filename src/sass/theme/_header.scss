@@ -3,68 +3,53 @@ header {
     transition: var(--transition);
 
     .navbar {
-        border-bottom: 1px solid hsla(0 0% 80% / 1);
         transition: var(--transition);
     }
 
+    .mobile-contact li:first-child a.nav-link {
+        font-weight: 300;
+        border-right: 1px solid rgba(0, 0, 0, 0.08);
+    }
+    .mobile-contact li:last-child a.nav-link {
+        font-weight: 300;
+    }
+
     a.nav-link {
-        color: var(--col-primary-400);
+        color: var(--theme);
         font-size: var(--fs-400);
         font-weight: var(--fw-700);
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
         transition: var(--transition);
-        padding-left: 2rem !important;
-        padding-right: 2rem !important;
+        padding: 1rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
 
         @media (min-width: 992px) {
+            border-top: none;
+            font-size: var(--fs-300);
+            padding: 2rem 1rem !important;
             &:hover {
-                color: var(--col-primary-300);
+                color: var(--theme-alt);
+                background-color: var(--background-light);
             }
         }
     }
 
     .logo-container {
-        max-width: 180px;
+        // max-width: 180px;
         margin-right: 1rem;
+        width: min(200px, 60vw);
+        @media (min-width: 992px) {
+            width: min(300px, 60vw);
+        }
     }
 
     .logo {
-        background-image: url(../img/valewood-logo.svg);
-        background-position: center;
+        background-image: url(../img/silverline-coaches-logo-500px-final.png);
         background-repeat: no-repeat;
         background-size: contain;
         display: inline-block;
-        aspect-ratio: 1;
-        width: 80px;
-        min-width: 80px;
-        max-width: 100%;
-    }
-
-    &.scrolled {
-        background-color: var(--col-light);
-        box-shadow: 0 4px 12px hsla(0 0% 0% / 0.05);
-
-        .navbar {
-            border-bottom: 1px solid var(--col-grey-100);
-        }
-
-        a.nav-link {
-            color: var(--col-primary-400);
-
-            @media (min-width: 992px) {
-                &:hover {
-                    color: var(--col-primary-300);
-                }
-            }
-        }
-
-        .current_page_item > .nav-link,
-        .current_page_parent > .nav-link,
-        .dropdown.current-page-ancestor > .nav-link,
-        .dropdown.current-menu-item > .nav-link {
-            color: var(--col-primary-300);
-        }
+        height: 70px;
+        width: 100%;
+        background-position: left;
     }
 
     &.hide {
@@ -75,13 +60,16 @@ header {
     .current_page_parent > .nav-link,
     .dropdown.current-page-ancestor > .nav-link,
     .dropdown.current-menu-item > .nav-link {
-        color: var(--col-primary-300);
+        color: var(--theme-alt);
     }
 
     .contact-info {
+        box-shadow: 0 0 0 1px var(--border-dark);
         a {
+            font-size: var(--fs-300);
             text-decoration: none;
             color: var(--col-dark);
+            font-weight: var(--fw-700);
         }
     }
 

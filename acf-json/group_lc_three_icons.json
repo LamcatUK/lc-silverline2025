@@ -1,10 +1,10 @@
 {
-    "key": "group_lc_testimonial_slider",
-    "title": "LC Testimonial Slider",
+    "key": "group_lc_three_icons",
+    "title": "LC Three Icons",
     "fields": [
         {
-            "key": "field_lc_testimonial_slider_title",
-            "label": "LC Testimonial Slider",
+            "key": "field_lc_three_icons_title",
+            "label": "LC Three Icons",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -21,9 +21,9 @@
             "new_lines": "wpautop"
         },
         {
-            "key": "field_6883c933722e2",
-            "label": "Testimonials",
-            "name": "testimonials",
+            "key": "field_6884a4ddeaa6d",
+            "label": "Icons",
+            "name": "icons",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -43,9 +43,9 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_6883c946722e3",
-                    "label": "Testimonial",
-                    "name": "testimonial",
+                    "key": "field_6884a4eeeaa6e",
+                    "label": "Glyph",
+                    "name": "glyph",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
@@ -62,12 +62,12 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_6883c933722e2"
+                    "parent_repeater": "field_6884a4ddeaa6d"
                 },
                 {
-                    "key": "field_6883c94d722e4",
-                    "label": "Author",
-                    "name": "author",
+                    "key": "field_6884a4f7eaa6f",
+                    "label": "Title",
+                    "name": "title",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
@@ -84,7 +84,7 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_6883c933722e2"
+                    "parent_repeater": "field_6884a4ddeaa6d"
                 }
             ]
         }
@@ -94,7 +94,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/lc-testimonial-slider"
+                "value": "acf\/lc-three-icons"
             }
         ]
     ],
@@ -107,5 +107,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753467218
+    "modified": 1753523451
 }

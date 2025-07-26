@@ -1,0 +1,215 @@
+{
+    "key": "group_lc_four_images",
+    "title": "LC Four Images",
+    "fields": [
+        {
+            "key": "field_lc_four_images_title",
+            "label": "LC Four Images",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "esc_html": 0,
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_6883c506e1585",
+            "label": "Image 1",
+            "name": "image_1",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "thumbnail"
+        },
+        {
+            "key": "field_6883c515e1586",
+            "label": "Link 1",
+            "name": "link_1",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_6883c521e1587",
+            "label": "Image 2",
+            "name": "image_2",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "thumbnail"
+        },
+        {
+            "key": "field_6883c527e158a",
+            "label": "Link 2",
+            "name": "link_2",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_6883c522e1588",
+            "label": "Image 3",
+            "name": "image_3",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "thumbnail"
+        },
+        {
+            "key": "field_6883c528e158b",
+            "label": "Link 3",
+            "name": "link_3",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_6883c524e1589",
+            "label": "Image 4",
+            "name": "image_4",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "thumbnail"
+        },
+        {
+            "key": "field_6883c52ae158c",
+            "label": "Link 4",
+            "name": "link_4",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/lc-four-images"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1753466166
+}

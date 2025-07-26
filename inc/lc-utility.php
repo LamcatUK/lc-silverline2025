@@ -1,11 +1,11 @@
 <?php
 /**
- * Utility functions for the Valewood Bathrooms theme.
+ * Utility functions for the Silverline Coaches theme.
  *
  * This file contains various helper functions, shortcodes, and customizations
  * to enhance the functionality of the theme.
  *
- * @package lc-valewood2025
+ * @package lc-silverline2025
  */
 
 /**
@@ -831,6 +831,94 @@ function disable_tinymce_cleanup( $options ) {
 }
 add_filter( 'tiny_mce_before_init', 'disable_tinymce_cleanup' );
 
+
+add_action(
+	'wpcf7_init',
+	function () {
+		wpcf7_add_form_tag(
+			array( 'honeypot', 'honeypot*' ),
+			'lc_cf7_honeypot_form_tag_handler',
+			array(
+				'name-attr'    => true,
+				'do-not-store' => true,
+			)
+		);
+	}
+);
+
+/**
+ * Handles the honeypot form tag in Contact Form 7.
+ *
+ * Creates a hidden honeypot field that should remain empty. This helps prevent spam
+ * by catching automated form submissions.
+ *
+ * @param WPCF7_FormTag $tag The form tag object.
+ * @return string HTML for the honeypot field.
+ */
+function lc_cf7_honeypot_form_tag_handler( $tag ) {
+	if ( empty( $tag->name ) ) {
+		return '';
+	}
+
+	$validation_error = wpcf7_get_validation_error( $tag->name );
+	$class            = wpcf7_form_controls_class( $tag->type );
+
+	if ( $validation_error ) {
+		$class .= ' wpcf7-not-valid';
+	}
+
+	$atts                 = array();
+	$atts['class']        = $tag->get_class_option( $class );
+	$atts['id']           = $tag->get_id_option();
+	$atts['message']      = $tag->get_option( 'message', '', true );
+	$atts['name']         = $tag->name;
+	$atts['type']         = 'text';
+	$atts['autocomplete'] = 'off';
+
+	$atts = wpcf7_format_atts( $atts );
+
+	$html = sprintf(
+		'<span class="contact-field" style="position: fixed; top: 0; left: 0; margin: -1px; padding: 0; height: 1px; width: 1px; clip: rect(0 0 0 0); clip-path: inset(50%%); overflow: hidden; white-space: nowrap; border: 0;">
+			<label>
+				<span>%1$s</span>
+				<input %2$s value="" tabindex="-1">
+			</label>
+			%3$s
+		</span>',
+		esc_html( ! empty( $atts['message'] ) ? $atts['message'] : __( 'If you are human, leave this field blank.', 'lc-silverline2025' ) ),
+		$atts,
+		$validation_error
+	);
+
+	return $html;
+}
+
+add_filter( 'wpcf7_validate_honeypot', 'lc_cf7_honeypot_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_honeypot*', 'lc_cf7_honeypot_validation_filter', 10, 2 );
+
+/**
+ * Validates the honeypot field in Contact Form 7.
+ *
+ * Checks if the honeypot field has been filled out. If it has, the submission
+ * is marked as spam.
+ *
+ * @param WPCF7_Validation $result The validation result object.
+ * @param WPCF7_FormTag    $tag    The form tag object.
+ * @return WPCF7_Validation The modified validation result.
+ */
+function lc_cf7_honeypot_validation_filter( $result, $tag ) {
+	$name = $tag->name;
+
+	// We don't need nonce verification here as this is handled by CF7.
+	// phpcs:ignore WordPress.Security.NonceVerification.Missing
+	$value = isset( $_POST[ $name ] ) ? sanitize_text_field( wp_unslash( $_POST[ $name ] ) ) : '';
+
+	if ( ! empty( $value ) ) {
+		$result->invalidate( $tag, __( 'Spam detected.', 'lc-silverline2025' ) );
+	}
+
+	return $result;
+}
 
 // phpcs:disable
 // CUSTOM LOGIN URL.

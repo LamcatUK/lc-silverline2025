@@ -2,9 +2,9 @@
 /**
  * LC Theme Functions
  *
- * This file contains theme-specific functions and customizations for the Valewood Bathrooms theme.
+ * This file contains theme-specific functions and customizations for the Silverline Coaches theme.
  *
- * @package lc-valewood2025
+ * @package lc-silverline2025
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -106,9 +106,9 @@ function widgets_init() {
 
     register_nav_menus(
 		array(
-			'primary_nav'  => __( 'Primary Nav', 'lc-valewood2025' ),
-			'footer_menu1' => __( 'Footer Nav 1', 'lc-valewood2025' ),
-			'footer_menu2' => __( 'Footer Nav 2', 'lc-valewood2025' ),
+			'primary_nav'  => __( 'Primary Nav', 'lc-silverline2025' ),
+			'footer_menu1' => __( 'Footer Nav 1', 'lc-silverline2025' ),
+			'footer_menu2' => __( 'Footer Nav 2', 'lc-silverline2025' ),
 	    )
 	);
 
@@ -178,6 +178,7 @@ function lc_dashboard_widget_display() {
     </div>
 	<?php
 }
+
 
 // phpcs:disable
 // add_filter('wpseo_breadcrumb_links', function( $links ) {
@@ -296,10 +297,12 @@ add_action(
  * @return string The modified HTML list content for the menu items.
  */
 function add_custom_menu_item( $items, $args ) {
-    if ( $args->theme_location == 'primary_nav' ) {
-        $new_item  = '<li class="d-lg-none menu-item nav-item">' . do_shortcode( '[contact_phone icon="true" class="nav-link"]' ) . '</li>';
-        $new_item .= '<li class="d-lg-none menu-item nav-item">' . do_shortcode( '[contact_email icon="true" class="nav-link" text="Email Us"]' ) . '</li>';
-        $items    .= $new_item;
+    if ( 'primary_nav' === $args->theme_location ) {
+        $new_item  = '<div class="mobile-contact d-lg-none d-flex justify-content-around align-items-center">';
+        $new_item .= '<li class="d-lg-none menu-item nav-item w-50 text-center">' . do_shortcode( '[contact_phone icon="true" class="nav-link"]' ) . '</li>';
+        $new_item .= '<li class="d-lg-none menu-item nav-item w-50 text-center">' . do_shortcode( '[contact_email icon="true" class="nav-link" text="Email Us"]' ) . '</li>';
+        $new_item .= '</div>';
+        $items     = $new_item . $items;
     }
     return $items;
 }

@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package lc-valewood2025
+ * @package lc-silverline2025
  */
 
 // Exit if accessed directly.
@@ -19,25 +19,10 @@ session_start();
         charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, minimum-scale=1">
     <link rel="preload"
-        href="<?= esc_url( get_stylesheet_directory_uri() ); ?>/fonts/lato-v24-latin-regular.woff2"
+        href="<?= esc_url( get_stylesheet_directory_uri() ); ?>/fonts/open-sans-v43-latin-300.woff2"
         as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload"
-        href="<?= esc_url( get_stylesheet_directory_uri() ); ?>/fonts/lato-v24-latin-700.woff2"
-        as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload"
-        href="<?= esc_url( get_stylesheet_directory_uri() ); ?>/fonts/montserrat-v29-latin-regular.woff2"
-        as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload"
-        href="<?= esc_url( get_stylesheet_directory_uri() ); ?>/fonts/montserrat-v29-latin-500.woff2"
-        as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload"
-        href="<?= esc_url( get_stylesheet_directory_uri() ); ?>/fonts/montserrat-v29-latin-700.woff2"
-        as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload"
-        href="<?= esc_url( get_stylesheet_directory_uri() ); ?>/fonts/playfair-display-v37-latin-regular.woff2"
-        as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload"
-        href="<?= esc_url( get_stylesheet_directory_uri() ); ?>/fonts/playfair-display-v37-latin-italic.woff2"
+        href="<?= esc_url( get_stylesheet_directory_uri() ); ?>/fonts/open-sans-v43-latin-700.woff2"
         as="font" type="font/woff2" crossorigin="anonymous">
     <?php
 	if ( ! is_user_logged_in() ) {
@@ -100,10 +85,10 @@ session_start();
 {
     "@context": "http://schema.org",
     "@type": "HomeAndConstructionBusiness",
-    "name": "Valewood Bathrooms",
+    "name": "Silverline Coaches",
     "url": "https://www.valewoodbathrooms.co.uk/",
-    "logo": "https://www.valewoodbathrooms.co.uk/wp-content/theme/lc-valewood2025/img/valewood-logo.jpg",
-    "description": "Valewood Bathrooms offers bespoke bathroom renovation, design, and installation services across West Sussex, tailored to your space and needs.",
+    "logo": "https://www.valewoodbathrooms.co.uk/wp-content/theme/lc-silverline2025/img/valewood-logo.jpg",
+    "description": "Silverline Coaches offers bespoke bathroom renovation, design, and installation services across West Sussex, tailored to your space and needs.",
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "Shelley's Farm, Valewood Lane",
@@ -189,7 +174,7 @@ session_start();
         "description": "Tailored bathroom design services to create your ideal space.",
         "provider": {
             "@type": "LocalBusiness",
-            "name": "Valewood Bathrooms",
+            "name": "Silverline Coaches",
             "url": "https://www.valewoodbathrooms.co.uk/",
             "address": {
             "@type": "PostalAddress",
@@ -212,7 +197,7 @@ session_start();
         "description": "Comprehensive renovation services to transform your bathroom.",
         "provider": {
             "@type": "LocalBusiness",
-            "name": "Valewood Bathrooms",
+            "name": "Silverline Coaches",
             "url": "https://www.valewoodbathrooms.co.uk/",
             "address": {
             "@type": "PostalAddress",
@@ -235,7 +220,7 @@ session_start();
         "description": "Professional installation of bathroom fixtures and fittings.",
         "provider": {
             "@type": "LocalBusiness",
-            "name": "Valewood Bathrooms",
+            "name": "Silverline Coaches",
             "url": "https://www.valewoodbathrooms.co.uk/",
             "address": {
             "@type": "PostalAddress",
@@ -276,51 +261,37 @@ session_start();
 	}
 	?>
 <header id="wrapper-navbar" class="fixed-top">
-    <nav id="main-nav" class="navbar navbar-expand-lg pb-0 position-relative" aria-labelledby="main-nav-label">
-        <div class="container-xl">
-            <div class="row w-100 gx-4">
-                <div class="col-2 order-1">
-                    <div class="logo-container">
-                        <a href="/" class="logo" aria-label="Valewood Bathrooms Homepage"></a>
-                    </div>
-                </div>
-                
-                <div class="col-lg-8 order-3 order-lg-2">
-                    <div id="navbarContent" class="collapse navbar-collapse">
-                        <div class="w-100 d-flex flex-column justify-content-lg-between align-items-lg-center" style="row-gap:1rem">
-                            <div class="contact-info d-none d-lg-flex gap-3 w-100 justify-content-center">
-                                <?= do_shortcode( '[contact_phone icon=true]' ); ?>
-                                <?= do_shortcode( '[contact_email icon=true]' ); ?>
-                            </div>
-                            <?php
-                            wp_nav_menu(
-                                array(
-                                    'theme_location' => 'primary_nav',
-                                    'container'      => false,
-                                    'menu_class'     => 'navbar-nav w-100 justify-content-center align-items-lg-center text-center pb-5 pb-lg-0',
-                                    'fallback_cb'    => '',
-                                    'depth'          => 3,
-                                    'walker'         => new Understrap_WP_Bootstrap_Navwalker(),
-                                )
-                            );
-                            ?>
-                        </div>
-                    </div>
-                </div>
+    <div class="contact-info d-none d-lg-flex">
+        <div class="container d-flex gap-3 w-100 justify-content-end py-1">
+            <?= do_shortcode( '[contact_phone icon=true]' ); ?>
+            <?= do_shortcode( '[contact_email icon=true]' ); ?>
+        </div>
+    </div>
+    <nav id="main-nav" class="navbar navbar-expand-lg py-0" aria-labelledby="main-nav-label">
+        <div class="container px-0 px-lg-2">
+            <div class="logo-container px-4 px-lg-0">
+                <a href="/" class="logo" aria-label="Silverline Coaches Homepage"></a>
+            </div>
 
-                <div class="col-2 order-2 order-lg-3 d-flex justify-content-end align-items-center">
-                    <div class="d-none d-lg-block">
-                        <a href="/contact/" class="button button--sm button-outline">Book Appointment</a>
-                    </div>
+            <button class="navbar-toggler me-4" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
 
-                    <!-- Mobile Toggle -->
-                    <button class="navbar-toggler d-lg-none me-0" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <i class="fas fa-bars"></i>
-                    </button>
-
-                </div>
+            <div id="navbarContent" class="collapse navbar-collapse">
+                <?php
+                        wp_nav_menu(
+                            array(
+                                'theme_location' => 'primary_nav',
+                                'container'      => false,
+                                'menu_class'     => 'navbar-nav w-100 justify-content-end align-items-lg-center pb-5 pb-lg-0',
+                                'fallback_cb'    => '',
+                                'depth'          => 3,
+                                'walker'         => new Understrap_WP_Bootstrap_Navwalker(),
+                            )
+                        );
+                        ?>
             </div>
         </div>
     </nav>

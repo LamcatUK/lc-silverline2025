@@ -1,10 +1,10 @@
 <?php
 /**
- * Index template for Valewood Bathrooms theme.
+ * Index template for Silverline Coaches theme.
  *
  * This file is responsible for rendering the main blog page with posts and categories.
  *
- * @package lc-valewood2025
+ * @package lc-silverline2025
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -18,7 +18,7 @@ get_header();
     <section class="page_hero">
         <?= $bg; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
         <div class="container-xl">
-			<h1 class="page_hero__title">Valewood Bathrooms News and Insights</h1>
+			<h1 class="page_hero__title">Silverline Coaches News and Insights</h1>
 			<div class="page_hero__content"><a href="/contact/" class="button button-outline">Contact us</a></div>
         </div>
     </section>

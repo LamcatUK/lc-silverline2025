@@ -5,8 +5,8 @@
  * This template is used to display archive pages for posts.
  *
  * @package WordPress
- * @subpackage lc-valewood2025
- * @since lc-valewood2025 1.0
+ * @subpackage lc-silverline2025
+ * @since lc-silverline2025 1.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -22,7 +22,7 @@ get_header();
     <section class="page_hero">
         <?= $bg; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
         <div class="container-xl">
-            <h1 class="page_hero__title">Valewood Bathrooms News and Insights</h1>
+            <h1 class="page_hero__title">Silverline Coaches News and Insights</h1>
             <h2 class="text-white"><?= esc_html( $category->name ); ?></h2>
             <a href="/contact/" class="button button-outline">Contact us</a>
         </div>

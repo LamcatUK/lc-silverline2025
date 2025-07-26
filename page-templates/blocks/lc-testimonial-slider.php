@@ -2,88 +2,72 @@
 /**
  * Block template for LC Testimonial Slider.
  *
- * @package lc-valewood2025
+ * @package lc-silverline2025
  */
 
 defined( 'ABSPATH' ) || exit;
-
-$GLOBALS['skip_core_block_wrapping'] = true;
-
 ?>
-<section class="section-testimonials">
-	<div class="container">
-		<h2 class="text--primary-500 section-heading" data-aos="fade">What our clients say</h2>
-
-		<div class="splide testimonial-slider" role="region" aria-label="Client testimonials">
-			<div class="splide__track">
-				<ul class="splide__list">
-					<?php
-					$testimonials = new WP_Query(
-						array(
-							'post_type'      => 'testimonials',
-							'posts_per_page' => 6,
-							'orderby'        => 'date',
-							'order'          => 'DESC',
-						)
-					);
-
-					if ( $testimonials->have_posts() ) {
-						while ( $testimonials->have_posts() ) {
-							$testimonials->the_post();
-							$client  = get_the_title();
-							$content = get_the_content();
-							$cleaned = wpautop( $content );
-							?>
-							<li class="splide__slide">
-								<blockquote class="testimonial-card">
-									<div class="testimonial-quote">
-										<div class="testimonial-text">
-											<?php echo wp_kses_post( $cleaned ); ?>
-										</div>
-										<div class="testimonial-author">
-											— <?php echo esc_html( $client ); ?>
-										</div>
-									</div>
+<section class="testimonial-slider <?= esc_attr( $block['className'] ?? '' ); ?>" data-aos="fade-up">
+	<div class="splide" role="group" aria-label="Testimonials">
+		<div class="splide__track">
+			<div class="splide__list">
+				<?php
+				if ( have_rows( 'testimonials' ) ) {
+					while ( have_rows( 'testimonials' ) ) {
+						the_row();
+						$testimonial = get_sub_field( 'testimonial' );
+						$author      = get_sub_field( 'author' );
+						?>
+						<div class="splide__slide">
+							<div class="testimonial-slider__item">
+								<blockquote class="testimonial-slider__quote">
+									<?= esc_html( $testimonial ); ?>
 								</blockquote>
-							</li>
-							<?php
-						}
-						wp_reset_postdata();
+								<cite class="testimonial-slider__author">
+									<?= esc_html( $author ); ?>
+								</cite>
+							</div>
+						</div>
+						<?php
 					}
-					?>
-				</ul>
+				}
+				?>
 			</div>
-		</div>
-
-		<div class="text-center mt-4">
-			<a href="/testimonials" class="button button-outline button--arrow">Read more testimonials</a>
 		</div>
 	</div>
 </section>
 
 <?php
-add_action(
-	'wp_footer',
-	function () {
-		?>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-	new Splide('.testimonial-slider', {
-		type: 'fade',
-		perPage: 1,
-		perMove: 1,
-		pagination: false,
-		arrows: true,
-		autoplay: true,
-		interval: 8000,
-		speed: 1000,
-		rewind: true,
-		easing: 'ease',
-	}).mount();
-});
-</script>
-		<?php
-	}
+// Enqueue Splide CSS and JS.
+wp_enqueue_style(
+	'splide',
+	'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css',
+	array(),
+	'4.1.4'
 );
 
-$GLOBALS['skip_core_block_wrapping'] = false;
+wp_enqueue_script(
+	'splide',
+	'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js',
+	array(),
+	'4.1.4',
+	true
+);
+
+// Enqueue custom initialization script.
+wp_add_inline_script(
+	'splide',
+	'document.addEventListener( "DOMContentLoaded", function() {
+		new Splide( ".testimonial-slider .splide", {
+			type: "slide",
+			perPage: 1,
+			autoplay: true,
+			interval: 5000,
+			pauseOnHover: true,
+			arrows: false,
+			pagination: false,
+			speed: 800,
+			gap: "2rem"
+		}).mount();
+	});'
+);
